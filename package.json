@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/iamshaunjp/node-express-jwt-auth/issues"
   },
-  "homepage": "https://github.com/iamshaunjp/node-express-jwt-auth#readme"
+  "homepage": "https://github.com/iamshaunjp/node-express-jwt-auth#readme",
+  "devDependencies": {
+    "dotenv": "^16.0.0"
+  }
 }

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
+const dotenv = require('dotenv/config');
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 // database connection
-const dbURI = 'mongodb+srv://sammybammy52:akaragidi@authcluster.83uqk.mongodb.net/node-auth?retryWrites=true&w=majority';
+const dbURI = process.env.dbURI;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
   .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
